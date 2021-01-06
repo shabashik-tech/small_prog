@@ -19,10 +19,13 @@ def create_passwords():
 def save_file(passwords, file_name):
     with open(file_name, 'a', encoding='utf-8') as file:
         for item in passwords:
-            print(item)
             file.write('%s\n' % item) 
 
 
+def main():
+    passwords = create_passwords()
+    save_file(passwords, out_file)
 
-passwords = create_passwords()
-save_file(passwords, out_file)
+
+if __name__ == '__main__':
+    main()
