@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tolle</title>
+
+    <script src='eel.js'></script>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+</head>
+
+<body>
+
+    <button id="show">Следующая цитата</button>
+    <div id="info"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Тут пишем JS-код для вызова Python-функций
+        async function get_citate(){
+            //Вызываем функцию get_citate из python-кода
+            let result = await eel.get_citate()();
+            document.getElementById('info').innerHTML = result;
+        }
+
+        jQuery('#show').on('click', function() {
+            get_citate();
+        });
+    </script>
+
+</body>
+
+</html>
